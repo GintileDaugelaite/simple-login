@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans&display=swap");
+@import "../src/styles/mixins";
+@import "../src/styles/variables";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $blue;
+  color: $white;
+  margin: 0 auto;
+  font-family: $regular-font;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  &__login-message {
+    margin-top: 16rem;
+    font-size: 25px;
+    font-weight: $bold-font-weight;
+  }
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+
+  &__email {
+    background: url(assets/icons/akar-icons_person.svg) no-repeat scroll 7px 7px;
+  }
+
+  &__email,
+  &__password {
+    padding-left: 50px;
+    height: 50px;
+    width: 433px;
+    border: 1px solid $white;
+    border-radius: 10px;
+    color: $white;
+    font-family: $regular-font;
+    font-size: $regular-font-size;
+    margin-bottom: 21px;
+
+    @include for-mobile {
+      width: 100%;
+    }
+  }
+
+  &__email::placeholder,
+  &__password::placeholder {
+    color: $white;
+    font-weight: $bold-font-weight;
+    font-size: $regular-font-size;
+    font-family: $regular-font;
+    letter-spacing: $letter-spacing-05;
+  }
+
+  &__email:focus,
+  &__password:focus {
+    outline: none;
+  }
+
+  &__password {
+    background: url(assets/icons/carbon_password.svg) no-repeat scroll 7px 7px;
+  }
+
+  &__login-btn {
+    height: 50px;
+    width: 433px;
+    border: 2px solid $green;
+    border-radius: 15px;
+    color: $green;
+    font-family: $regular-font;
+    font-size: $regular-font-size;
+    font-weight: $bold-font-weight;
+    background-color: $blue;
+    letter-spacing: $letter-spacing-05;
+    cursor: pointer;
+
+    @include for-mobile {
+      width: 100%;
+    }
+  }
+
+  &__login-btn:hover {
+    background-color: $green;
+    color: $white;
+    transition: 0.2s;
+  }
+
+  &__login-btn:focus {
+    outline: 2px solid $green;
+  }
+
+  &__error {
+    text-align: center;
+    margin: -12px 0 10px 0;
+    font-size: 14px;
+    color: #fff700;
+  }
+
+  &__error-img {
+    text-align: center;
+    width: 17px;
+    margin: 0 4px -3px 0;
+    filter: $yellow-svg;
+  }
+}
+
+.login-title {
+  font-size: 48px;
+  margin: 120px 0 0 0;
+  letter-spacing: $letter-spacing-05;
+}
+
+.login-description {
+  margin: 8px 0 47px 0;
+  font-size: $regular-font-size;
+  font-weight: $bold-font-weight;
+  letter-spacing: $letter-spacing-05;
+  text-align: center;
+}
+
+.vector {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 33%;
+  z-index: -1;
+}
+
+.ellipse-s {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 14%;
+  z-index: -1;
+}
+
+.ellipse-l {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 18%;
+}
